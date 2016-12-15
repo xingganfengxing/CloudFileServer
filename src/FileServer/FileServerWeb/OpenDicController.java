@@ -3,20 +3,20 @@ package FileServer.FileServerWeb;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by zhy on 12/4/16.
+ * Created by zhy on 12/12/16.
  */
 @Controller
-public class HomeController {
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String Home(Model model) {
-        File[] file = new File("/home/zhy/Data").listFiles();
+public class OpenDicController {
+    @RequestMapping(value = "/open")
+    public String showDic(@RequestParam String dic, Model model) {
+        File[] file = new File(dic).listFiles();
         List<File> fileList = new ArrayList<>();
         List<File> dicList = new ArrayList<>();
         for (File f : file ) {
@@ -27,7 +27,7 @@ public class HomeController {
         }
         model.addAttribute("fileList", fileList);
         model.addAttribute("dicList", dicList);
-        return "index";
+        model.addAttribute("path", dic);
+        return "show";
     }
-
 }

@@ -15,7 +15,7 @@ import java.io.*;
 @Controller
 public class DownloadController {
     @RequestMapping(value = "/download",method = RequestMethod.GET)
-    public String download(@RequestParam String fileName, HttpServletResponse res, HttpServletRequest req) throws IOException {
+    public void download(@RequestParam String fileName, HttpServletResponse res, HttpServletRequest req) throws IOException {
         File file = new File(fileName);
         InputStream inputStream = new FileInputStream(file);
         OutputStream outputStream = res.getOutputStream();
@@ -28,7 +28,6 @@ public class DownloadController {
         }
         inputStream.close();
         outputStream.close();
-        return "redirect:/";
     }
 }
 

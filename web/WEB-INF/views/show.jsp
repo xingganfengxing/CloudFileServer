@@ -28,9 +28,9 @@
       <p>上传文件</p>
       <form method="post" enctype="multipart/form-data" action="/upload">
           <input type="file" name="uploadFile"><br>
+          <input type="hidden" name="path" value="${path}">
           <input type="submit" value="Submit">
       </form>
-
   <table class="table">
       <thead>
         <th>fileName</th>
@@ -39,24 +39,20 @@
       <tbody>
       <c:forEach var="dic" items="${dicList}">
           <tr>
-              <td><form method="get" action="/{dic}">
-                  <input type="hidden" value="${dic}" name="dic"/>
-                  <input type="submit" value="${dic.getName()}">
-              </form> </td>
-              <td>delete</td>
+              <td>
+                  <a href="/open?dic=${dic}"><button type="button">${dic.getName()}</button></a>
+              </td>
+              <td>
+                  <a href="/delete?fileName=${dic}"><button type="button">delete</button></a>
+              </td>
           </tr>
       </c:forEach>
       <c:forEach var="file" items="${fileList}">
               <tr>
                   <td><c:out value="${file.getName()}"/></td>
                   <td>
-                      <form class="form-inline" method="post" action="/delete">
-                          <input type="hidden" name="fileName" value="${file}">
-                        <input type="submit" class="btn btn-danger" value="delete">
-                      </form>
-                      <form class="form-inline" method="get" action="/download">
-                          <input type="hidden" name="fileName" value="${file}">
-                          <input type="submit" class="btn btn-danger" value="download">
+                      <a href="/delete?fileName=${file}"><button type="button">delete</button></a>
+                      <a href="/download?fileName=${file}"><button type="button">download</button></a>
                       </form>
                   </td>
               </tr>
