@@ -35,8 +35,8 @@ public class FileServerController {
     public String show(Model model) {
 
         File[] file = new File("/home/zhy/Data/").listFiles();
-        List<File> fileList = new ArrayList<>();
-        List<File> dicList = new ArrayList<>();
+        List<File> fileList = new ArrayList<File>();
+        List<File> dicList = new ArrayList<File>();
         for (File f : file ) {
             if(f.isDirectory())
                 dicList.add(f);

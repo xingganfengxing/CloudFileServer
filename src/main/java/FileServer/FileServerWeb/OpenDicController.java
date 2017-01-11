@@ -17,8 +17,8 @@ public class OpenDicController {
     @RequestMapping(value = "/open")
     public String showDic(@RequestParam String dic, Model model) {
         File[] file = new File(dic).listFiles();
-        List<File> fileList = new ArrayList<>();
-        List<File> dicList = new ArrayList<>();
+        List<File> fileList = new ArrayList<File>();
+        List<File> dicList = new ArrayList<File>();
         for (File f : file ) {
             if(f.isDirectory())
                 dicList.add(f);
