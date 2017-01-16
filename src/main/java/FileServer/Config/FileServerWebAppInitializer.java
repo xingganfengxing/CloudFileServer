@@ -1,4 +1,4 @@
-package FileServer.FileServerConfig;
+package FileServer.Config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -27,7 +27,7 @@ public class FileServerWebAppInitializer extends AbstractAnnotationConfigDispatc
     @Override
     protected void customizeRegistration(ServletRegistration.Dynamic registration) {
         registration.setMultipartConfig(
-                new MultipartConfigElement("/home/zhy/Data")
+                new MultipartConfigElement(RootPath.RootPath)
         );
     }
 }

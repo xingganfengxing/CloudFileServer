@@ -1,17 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
   User: zhy
-  Date: 12/10/16
-  Time: 10:19 AM
+  Date: 1/16/17
+  Time: 4:26 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page isELIgnored="false" %>
 <html>
 <head>
-    <title>error</title>
+    <title>about</title>
 </head>
 <body>
-<h1>${error}</h1>
+<p>Here is about</p>
 </body>
 </html>
