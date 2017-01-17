@@ -91,7 +91,7 @@ public class FileController {
         OutputStream outputStream = res.getOutputStream();
         res.setContentType("multipart/form-data");
         res.setHeader("Content-Disposition", "attachment;fileName="+new String(file.getName().getBytes("utf-8"),"iso-8859-1"));
-        byte[] stream = new byte[2048];
+        byte[] stream = new byte[4089];
         int length;
         while ((length = inputStream.read(stream)) > 0) {
             outputStream.write(stream,0,length);

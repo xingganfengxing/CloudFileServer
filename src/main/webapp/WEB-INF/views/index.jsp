@@ -21,6 +21,7 @@
                 讲道理我应该写一段描述，但是由于我不知道怎么写描述，所以
             我只能如实的回答我真的不知道怎么写这一段描述。
         </p>
+        <p>${error}</p>
         <form class="form-horizontal" role="form" action="/sign" method="post">
             <div class="form-group">
                 <label for="name" class="col-sm-3 control-label">Name</label>
